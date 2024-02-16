@@ -66,6 +66,8 @@ FROM
 
 
 <h3>2. SQL connection to Power BI</h3>
+![PowerBI Table](https://github.com/GGPortfolio/OlympicsAnalysis/assets/159342547/2a9afa88-1bcf-4306-aba3-85e29ecbc794)
+
 <h3>3.&nbsp;Calculations&nbsp;</h3>
 <p>The following calculations were created and used in Power BI using DAX in order to conduct analysis.&nbsp;</p>
 <ul>
