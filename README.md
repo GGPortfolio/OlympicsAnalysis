@@ -1,7 +1,7 @@
 # Olympic Games Analysis
 <h2>About Dataset:</h2>
 <p>This is a historical dataset on the modern Olympic Games, including all the Games from Athens 1896 to Rio 2016. Basic bio data on athletes and medal results were collected.&nbsp;This dataset provides an opportunity to ask questions about how the Olympics have evolved over time, including questions about the participation and performance of women, different nations, and different sports and events.</p>
-<p>The file athlete_events.csv contains 271116 rows and 15 columns. Each row corresponds to an individual athlete competing in an individual Olympic event (athlete-events). The columns are:</p>
+<p>The file contains 271116 rows and 15 columns. Each row corresponds to an individual athlete competing in an individual Olympic event (athlete-events). The columns are:</p>
 <ol>
 <li><strong>ID</strong>&nbsp;- Unique number for each athlete</li>
 <li><strong>Name</strong>&nbsp;- Athlete's name</li>
