@@ -114,7 +114,7 @@ IF(
 
 <h3>4.&nbsp;Dashboard&nbsp;</h3>
 <p>The final product provides users with filters and visuals to easily navigate through the history of the Olympics.&nbsp;</p>
-<p>Click on the image to interact with the visual!&nbsp;</p>
+<p><span style="color: #0000ff;"><strong>CLICK&nbsp;on the image to interact with the visual!&nbsp;</strong></span></p>
 
 [![Olympics Power BI](https://github.com/GGPortfolio/OlympicsAnalysis/assets/159342547/f12de0fa-369e-49e1-9771-22bc68248349)](https://app.powerbi.com/view?r=eyJrIjoiN2Y2ZjMyYWMtYzU3ZC00YWI3LWFlM2ItYjczOGU0ZmYwODNmIiwidCI6Ijk5YjY0NTFkLTRmY2QtNDE1Zi1iNGJlLWQ5N2ZhZGJjZGI5ZiJ9)
 
