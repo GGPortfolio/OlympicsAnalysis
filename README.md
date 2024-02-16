@@ -66,7 +66,10 @@ FROM
 
 
 <h3>2. SQL connection to Power BI</h3>
-![PowerBI Table](https://github.com/GGPortfolio/OlympicsAnalysis/assets/159342547/2a9afa88-1bcf-4306-aba3-85e29ecbc794)
+
+![PowerBI Table](https://github.com/GGPortfolio/OlympicsAnalysis/assets/159342547/93ad5e4a-0642-4d87-aa5c-349950f76adc)
+
+![Transform Olympic Data](https://github.com/GGPortfolio/OlympicsAnalysis/assets/159342547/d7745bc5-b015-46d6-bbe0-60fd309c1e09)
 
 <h3>3.&nbsp;Calculations&nbsp;</h3>
 <p>The following calculations were created and used in Power BI using DAX in order to conduct analysis.&nbsp;</p>
@@ -112,5 +115,6 @@ IF(
 <h3>4.&nbsp;Dashboard&nbsp;</h3>
 <p>The final product provides users with filters and visuals to easily navigate through the history of the Olympics.&nbsp;</p>
 <p>Click on the image to interact with the visual!&nbsp;</p>
-<h2>SQL Code:</h2>
-<p>The SQL code for this project can be found on&nbsp;</p>
+
+[![Olympics Power BI](https://github.com/GGPortfolio/OlympicsAnalysis/assets/159342547/f12de0fa-369e-49e1-9771-22bc68248349)](https://app.powerbi.com/view?r=eyJrIjoiN2Y2ZjMyYWMtYzU3ZC00YWI3LWFlM2ItYjczOGU0ZmYwODNmIiwidCI6Ijk5YjY0NTFkLTRmY2QtNDE1Zi1iNGJlLWQ5N2ZhZGJjZGI5ZiJ9)
+
