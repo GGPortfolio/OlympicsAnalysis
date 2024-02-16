@@ -24,6 +24,9 @@
 <p>I've delved into the extensive historical dataset of the modern Olympic Games, aiming to unveil broader trends, patterns, and insights that go beyond individual countries or teams. My objective was to grasp a deep understanding of how the Olympics have evolved over time and across various sports and events. By taking a holistic approach to the dataset, I sought to pinpoint overarching trends and key factors that have shaped the Olympics' trajectory, including changes in athlete participation and the distribution of medals.</p>
 <h2 data-selectable-paragraph="">Approach Used:</h2>
 <h3>1. Data Wrangling</h3>
+Prior to integrating my SQL database with Power BI for analysis, I recognized the importance of ensuring data quality. Employing various data wrangling and cleaning techniques, I meticulously refined the dataset to enhance its suitability for analysis. This process involved clarifying ambiguous entries, summarizing key information, and strategically removing irrelevant or redundant columns. By proactively addressing data quality concerns, I laid a solid foundation for accurate and insightful analysis within Power BI
+
+```SQL
 SELECT 
   ID, 
   Name AS 'Athlete Name', 
@@ -58,49 +61,52 @@ SELECT
   CASE WHEN Medal = 'NA' THEN 'No Medal' ELSE Medal END AS Medal 
 FROM 
   dbo.athletes_event_results  
+```
+
+
+
 <h3>2. SQL connection to Power BI</h3>
 <h3>3.&nbsp;Calculations&nbsp;</h3>
 <p>The following calculations were created and used in Power BI using DAX in order to conduct analysis.&nbsp;</p>
 <ul>
-<li>
-<div># of Athletes = DISTINCTCOUNT(Olympics[ID])</div>
-</li>
-<li>
-<div>Avg Age = AVERAGE(Olympics[Age])</div>
-</li>
-<li>
-<div>Female Count = calculate([# of Athletes],Olympics[Gender] = "Female")</div>
-</li>
-<li>
-<div>Male Count = calculate([# of Athletes],Olympics[Gender] = "Male")</div>
-</li>
-<li>
-<div>Gender Disparity * =</div>
-<div>IF(</div>
-<div>ISBLANK([Male Count]) || [Male Count] = 0 || ISBLANK([Female Count]),</div>
-<div>0,</div>
-<div>DIVIDE([Female Count], [Male Count])</div>
-<div>)</div>
-</li>
-<li>
-<div>Medals Awarded =</div>
-<div>
-<div>VAR SelectedMedal = SELECTEDVALUE(Olympics[Medal])</div>
-<div>RETURN</div>
-<div>IF(</div>
-<div>ISBLANK(SelectedMedal),</div>
-<div>CALCULATE(</div>
-<div>COUNTA(Olympics[Medal]),</div>
-<div>Olympics[Medal] &lt;&gt; "No Medal"</div>
-<div>),</div>
-<div>CALCULATE(</div>
-<div>COUNTA(Olympics[Medal]),</div>
-<div>Olympics[Medal] = SelectedMedal &amp;&amp; Olympics[Medal] &lt;&gt; "No Medal"</div>
-<div>)</div>
-<div>)</div>
-</div>
-</li>
-</ul>
+  
+  ``` 
+# of Athletes = DISTINCTCOUNT(Olympics[ID])
+  ```
+```
+Avg Age = AVERAGE(Olympics[Age])
+```
+```
+Female Count = calculate([# of Athletes],Olympics[Gender] = "Female")
+```
+```
+Male Count = calculate([# of Athletes],Olympics[Gender] = "Male")
+```
+```
+Gender Disparity * = 
+IF(
+    ISBLANK([Male Count]) || [Male Count] = 0 || ISBLANK([Female Count]),
+    0,
+    DIVIDE([Female Count], [Male Count])
+)
+```
+```
+Medals Awarded = 
+VAR SelectedMedal = SELECTEDVALUE(Olympics[Medal])
+RETURN
+IF(
+    ISBLANK(SelectedMedal),
+    CALCULATE(
+        COUNTA(Olympics[Medal]),
+        Olympics[Medal] <> "No Medal"
+    ),
+    CALCULATE(
+        COUNTA(Olympics[Medal]),
+        Olympics[Medal] = SelectedMedal && Olympics[Medal] <> "No Medal"
+    )
+)
+```
+
 <h3>4.&nbsp;Dashboard&nbsp;</h3>
 <p>The final product provides users with filters and visuals to easily navigate through the history of the Olympics.&nbsp;</p>
 <p>Click on the image to interact with the visual!&nbsp;</p>
