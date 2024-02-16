@@ -24,7 +24,40 @@
 <p>I've delved into the extensive historical dataset of the modern Olympic Games, aiming to unveil broader trends, patterns, and insights that go beyond individual countries or teams. My objective was to grasp a deep understanding of how the Olympics have evolved over time and across various sports and events. By taking a holistic approach to the dataset, I sought to pinpoint overarching trends and key factors that have shaped the Olympics' trajectory, including changes in athlete participation and the distribution of medals.</p>
 <h2 data-selectable-paragraph="">Approach Used:</h2>
 <h3>1. Data Wrangling</h3>
-<p>insert SQL&nbsp;</p>
+SELECT 
+  ID, 
+  Name AS 'Athlete Name', 
+  -- Updated the column name to clarify
+  CASE WHEN SEX = 'M' THEN 'MALE' ELSE 'FEMALE' END AS SEX, 
+  --Updated the column data to clarify visualizations header/axis names
+  Age, 
+  CASE WHEN Age > 65 THEN '65+' WHEN Age BETWEEN 50 
+  AND 65 THEN '50-65' WHEN Age BETWEEN 40 
+  AND 49 THEN '40-49' WHEN Age BETWEEN 30 
+  AND 39 THEN '30-39' WHEN Age BETWEEN 20 
+  AND 29 THEN '20-29' ELSE 'Under 19' END AS 'Age Groups', 
+  -- Added Age Groups for summarization
+  Height AS 'Height (cm)', 
+  --Added title descriptors for clarity
+  Weight AS 'Weight (kg)', 
+  --Added title descriptors for clarity
+  NOC AS 'Team Country Code', 
+  --Added title for clarity 
+  --Games (removed this column)
+  LEFT(Games, 4) AS 'Year', 
+  --Isolated Year from the Games Column
+  SUBSTRING(
+    Games, 
+    CHARINDEX(' ', Games) + 1, 
+    LEN(Games)
+  ) AS Season, 
+  City AS 'Host City', 
+  --renamed for clarity
+  Sport, 
+  Event, 
+  CASE WHEN Medal = 'NA' THEN 'No Medal' ELSE Medal END AS Medal 
+FROM 
+  dbo.athletes_event_results  
 <h3>2. SQL connection to Power BI</h3>
 <h3>3.&nbsp;Calculations&nbsp;</h3>
 <p>The following calculations were created and used in Power BI using DAX in order to conduct analysis.&nbsp;</p>
